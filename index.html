@@ -7,7 +7,17 @@
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Macondo|Mystery+Quest|Petit+Formal+Script|UnifrakturMaguntia" rel="stylesheet">
   <script type="text/javascript">
   // Create Wordbank via Array and varibles for this project and Global Variables
-   var words = ["Morgorth", "Beren", "Luthien", "Fingolfin", "Manwe", "Feanor"]
+  var doubleWord = ['a','b','c',
+         'd','e','f',
+         'g','h','i',
+         'j','k','l',
+         'm','n','o',
+         'p','q','r',
+         's','t','u',
+         'v','w','x',
+         'y','z'];
+
+   var wordBank = ["Morgorth", "Beren", "Luthien", "Fingolfin", "Manwe", "Feanor"]
    var lives = 8
    var win_message = "Mae g'ovannen! You are counted among the wise!"
    var lose_message = "Sorry, but you have been taken captive at Angband"
@@ -23,14 +33,14 @@ var docUnderScore = document.getElementsByClassName('underScore')
 var docRightguess = document.getElementsByClassName('rightGuess')
 var docWrongGuess = document.getElementsByClassName('wrongGuess')
 // chose word randomly
-console.log(guessWords);
-var randNum = Math.floor(Math.random() * words.length);
-var guessWords = words[randNum];
+
+var randNum = Math.floor(Math.random() * wordBank.length);
+var guessWords = wordBank[randNum];
 // create underscores based on length of word
 var generateUnderscore = () => {
   for (i = 0; i < guessWords.length; i++) {
     underScore.push('_');
-    docUnderScore[0].innerHTML = underScore.join(' ');
+    docUnderScore.innerHTML = underScore.join(' ');
   }
   return underScore;
 }
@@ -50,11 +60,16 @@ document.addEventListener('keypress', (event) => {
        alert(win_message);
      }
      else {
-     for(lives - 1; when lives = 0 alert(lose_message);
+       lives --;
+     }
+    if(lives === 0) {
+      alert(lose_message);
+    }
+
 
 
 }
-   }
+
  });
 
 generateUnderscore().join(' ');
@@ -64,7 +79,7 @@ generateUnderscore().join(' ');
 
 //if wwrong push to wrong array
 
-//create randomd word generator - with blanks for the lenght of charecters in the word
+//create random word generator - with blanks for the lenght of charecters in the word
 
 //create funtionality  if key pressed if a letter in the random word then place if not lose a life
 
